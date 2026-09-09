@@ -1289,7 +1289,7 @@ int parse (struct solver* S) {
       int wStart = S->witnessSize;
       int newSize = 0;
       for (i = 1; i < size; i++) {
-        if (buffer[i] == pivot) newSize = i;
+        if (fileSwitchFlag && buffer[i] == pivot) newSize = i;
         if (S->witnessSize == S->witnessAlloc) {
           S->witnessAlloc = (S->witnessAlloc * 3) >> 1;
           S->witness = (int *) realloc (S->witness, sizeof(int) * S->witnessAlloc); }
